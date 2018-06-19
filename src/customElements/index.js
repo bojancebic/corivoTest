@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import {authenticateUser} from '../helpers';
 
 export const LogedUserRoute = ({ component: Component, ...rest }) => (

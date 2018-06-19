@@ -5,22 +5,22 @@ import {authenticateUser} from '../helpers';
 class Login extends Component {
 
   state = {
-    redirectToReferrer: false
+    redirect: false
   }
 
   login = () => {
     authenticateUser.authenticate(() => {
       this.setState(() => ({
-        redirectToReferrer: true
+        redirect: true
       }))
     })
   }
 
   render() {
     const { from } = (this.props.location || {}).state || { from: { pathname: '/profile' } }
-    const { redirectToReferrer } = this.state
+    const { redirect } = this.state
 
-    if (redirectToReferrer === true) {
+    if (redirect === true) {
       return <Redirect to={from} />
     }
 
